@@ -49,3 +49,37 @@ app.delete('/product/:id', (request, response) => {
         }
     });
 }); 
+
+app.put('/product/:id/price/:num', (request, response) => {
+    let id = parseInt(request.params.id);
+    let price = parseInt(request.params.num);
+    mongoClient.connect(dbUrl, {useNewUrlParser: true}, (error, client) => {
+        if(error) {
+            throw error;
+        }else {
+            let db = client.db('Grocerydb');
+            db.collection('products').updateOne({_id: id}, {$set:{price: price} })
+                .then((doc) => {
+                    response.json(doc);
+                    client.close();
+                });
+        }
+    });
+});
+
+app.put('/product/:id/quantity/:quantity',(request, response) => {
+    let id = parseInt(request.params.id);
+    let quantity = request.params.quantity;
+    mongoClient.connect(dbUrl, {useNewUrlParser: true }, (error, client) => {
+        if(error) {
+            throw error;
+        }else {
+            let db = client.db('Grocerydb');
+            db.collection('products').updateOne({_id: id}, {$set: {quantity: quantity} })
+                .then((doc) => {
+                    response.json(doc);
+                    client.close();
+                })
+        }
+    })
+});
