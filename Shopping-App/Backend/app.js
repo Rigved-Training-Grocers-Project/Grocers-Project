@@ -1,3 +1,32 @@
+<<<<<<< HEAD
+// import all the functions
+let express = require("express");
+let app = express();
+let cors = require("cors");
+let bodyParser = require("body-parser");
+let mongoClient = require("mongodb").MongoClient;
+let PORT = 3001;
+let dbURL = "mongodb://localhost:27017";
+// start the server 
+app.listen(PORT, () => console.log(`Server is running in ${PORT}`));
+
+// apply the middleware
+app.use(cors());
+app.use(bodyParser.json());
+
+//create the services for contact app
+// storing the users 
+app.post("/users", (request, response) => {
+    mongoClient.connect(dbURL, {useNewUrlParser:true}, (error, client) => {
+        if(error) {
+            throw error;
+        } else {
+            let db = client.db("grocery");
+            let users = request.body; // _id, name, phone, dob, password, contacts:[];
+            db.collection("users").insertOne(users, (err, res) => {
+                if(err) {
+                    response.status(409).json({"message":`users ${users._id} exists`})
+=======
 let express = require('express');
 let cors = require('cors');
 let bodyParser = require('body-parser');
@@ -22,6 +51,7 @@ app.post("/product", (request, response) => {
             db.collection('products').insertOne(product, (err, res) => {
                 if (err) {
                     response.status(400).json({'message': `${err}`});
+>>>>>>> master
                 } else {
                     response.status(201).json(res);
                     client.close();
@@ -30,6 +60,8 @@ app.post("/product", (request, response) => {
         }
     });
 });
+<<<<<<< HEAD
+=======
 
 app.delete('/product/:id', (request, response) => {
     let id = parseInt(request.params.id);
@@ -83,3 +115,4 @@ app.put('/product/:id/quantity/:quantity',(request, response) => {
         }
     })
 });
+>>>>>>> master

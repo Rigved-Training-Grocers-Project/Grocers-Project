@@ -53,9 +53,11 @@ let getOrdersByUserID = (req, res) => {
 };
 
 // get all the orders.
+
 let getAllOrders= (req,res)=>{
   OrderModel.find({}, (err, result) => {
     if (!err) res.json(result);
   });
 }
+
 module.exports = { updateStatus, getOrdersByUserID, getAllOrders };
