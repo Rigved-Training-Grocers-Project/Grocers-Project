@@ -12,6 +12,6 @@ let OrderSchema = mongoose.Schema({
   userId:String
 });
 
-let OrderModel = mongoose.model("Order",OrderSchema,"itemsPurchased");
+let OrderModel = mongoose.model("Order", OrderSchema, "itemsPurchased");
 
 module.exports = OrderModel;

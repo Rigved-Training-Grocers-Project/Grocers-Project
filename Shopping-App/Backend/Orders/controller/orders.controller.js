@@ -1,6 +1,7 @@
 let OrderModel = require('../model/orders.model.js');
-let ItemModel=require("../../Users/user-model/item.model");
-let UserModel=require("../../Users/user-model/user.model")
+let ItemModel = require("../../Users/user-model/item.model");
+let UserModel = require("../../Users/user-model/user.model")
+
 // update order status
 let updateStatus = (req, res) => {
   let oid = req.body.oid;
@@ -42,6 +43,8 @@ let updateStatus = (req, res) => {
       console.log(err);
     });
 };
+
+// get orders by user id.
 let getOrdersByUserID = (req, res) => {
   let uid = req.params.uid;
   OrderModel.find({ userId: uid }, (err, result) => {
@@ -49,9 +52,12 @@ let getOrdersByUserID = (req, res) => {
   });
 };
 
+// get all the orders.
+
 let getAllOrders= (req,res)=>{
   OrderModel.find({}, (err, result) => {
     if (!err) res.json(result);
   });
 }
-module.exports = { updateStatus, getOrdersByUserID,getAllOrders };
+
+module.exports = { updateStatus, getOrdersByUserID, getAllOrders };
