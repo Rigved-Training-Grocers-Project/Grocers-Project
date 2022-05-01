@@ -2,7 +2,7 @@ let OrderModel = require('../model/orders.model.js');
 let ItemModel = require("../../Users/user-model/item.model");
 let UserModel = require("../../Users/user-model/user.model")
 
-// get orders by user id.
+
 let getOrdersByUserID = (req, res) => {
   let uid = req.params.uid;
   OrderModel.find({ userId: uid }, (err, result) => {
@@ -10,14 +10,12 @@ let getOrdersByUserID = (req, res) => {
   });
 };
 
-// get all the orders.
 let getAllOrders= (req,res)=>{
   OrderModel.find({}, (err, result) => {
     if (!err) res.json(result);
   });
 }
 
-// update order status
 let updateStatus = (req, res) => {
   let oid = req.body.oid;
   let Status = req.body.orderStatus;

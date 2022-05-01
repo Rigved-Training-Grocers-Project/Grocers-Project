@@ -6,7 +6,6 @@ const PurchaseModel = require('../user-model/purchased.model.js');
 const ObjectId = require('mongodb').ObjectId;
 const ItemModel = require('../user-model/item.model.js');
 
-//adding users
 let storeUserDetails = (req, res) => {
   let product = new UserModel({
     fname: req.body.fname,
@@ -37,6 +36,7 @@ let getUserById = (req, res) => {
     }
   });
 };
+
 let getUserDetails = (req, res) => {
   let email = req.param.email;
   UserModel.find({ email: email }, (err, result) => {
@@ -160,7 +160,6 @@ let addtoCart = (req, res) => {
 
 let unlockUser = (req, res) => {
   let uid = req.body.uid;
-  //let objUid = new ObjectId(uid);
   console.log('uid: ' + uid);
   UserModel.updateOne({ _id: new ObjectId(uid) }, { $set: { locked: false } })
     .then((obj) => {
