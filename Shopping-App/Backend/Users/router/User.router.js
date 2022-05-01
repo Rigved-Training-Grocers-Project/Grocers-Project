@@ -20,7 +20,6 @@ router.post('/select', UserController.addtoCart);
 router.get('/cart/:userId', UserController.viewCart);
 router.put('/cart', UserController.updateCart);
 router.delete('/cart/:pid', UserController.deleteCart);
-//router.get("/orderStatus:/:uid",UserController.getOrderStatus);
 router.post('/signUp', UserController.storeUserDetails);
 router.get('/getUserById/:pid', UserController.getUserById);
 router.put('/lockUser', UserController.lockUser);
@@ -37,14 +36,19 @@ router.get(
   '/getUserPurchasedDetails/:pid',
   PurchaseController.getUserPurchaseDetails
 );
+
 router.get(
   '/getProductPurchasedDetails/:product',
   PurchaseController.getProductPurchaseDetails
 );
+
 router.get('/getDatePurchasedDetails/:date', PurchaseController.datePurchased);
+
 router.get(
   '/twoDatesPurchased/:date/:date2',
   PurchaseController.twoDatesPurchaseed
 );
+
 router.post('/addPurchased/:userId', UserController.addPurchased);
+
 module.exports = router;

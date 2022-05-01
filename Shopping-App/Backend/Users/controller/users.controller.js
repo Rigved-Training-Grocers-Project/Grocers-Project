@@ -27,15 +27,6 @@ let storeUserDetails = (req, res) => {
       res.send("Record didn't store...");
     }
   });
-
-  UserModel.find({}, (err, result) => {
-    // gets it to display on the back end
-    console.log(result[result.length - 1]);
-    uid = result.length - 1;
-    if (!err) {
-      // cannot get it to send idk why
-    }
-  });
 };
 
 let getUserById = (req, res) => {

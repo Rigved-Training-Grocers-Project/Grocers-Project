@@ -8,15 +8,7 @@ let getProductDetails = (req,res)=>{
         }
     })
 }
-//select
-let getProductById = (req,res)=>{
-    let pid = req.params.pid;       //passing the id through path param
-    ProductModel.find({_id:pid},(err,result)=>{
-        if(!err){
-            res.json(result);
-        }
-    })
-}
+
 //add
 let storeProdectDetails = (req,res)=>{
     let product = new ProductModel({
@@ -35,6 +27,7 @@ let storeProdectDetails = (req,res)=>{
         }
     })
 }
+
 //delete
 let deleteProdectById = (req,res)=>{
     let pid = req.params.pid;       //passing the id through path param
@@ -46,6 +39,16 @@ let deleteProdectById = (req,res)=>{
                 res.send("No such Product")
             }
         } 
+    })
+}
+
+//select
+let getProductById = (req,res)=>{
+    let pid = req.params.pid;
+    ProductModel.find({_id:pid},(err,result)=>{
+        if(!err){
+            res.json(result);
+        }
     })
 }
 

@@ -67,6 +67,8 @@ let editEmpPro = (req, res) => {
       console.log(err);
     });
 }; 
+
+// change emp password
 let changeEmpPassword = (req,res) =>{
   let eid = req.params.eid;
   let newPass = req.body.newPass;
