@@ -1,6 +1,6 @@
 let ProductModel = require('../model/product.model.js');
 
-//view  retrieve all product details
+//retrieve all product details
 let getProductDetails = (req,res)=>{
     ProductModel.find({},(err,result)=>{
         if(!err){
@@ -9,7 +9,6 @@ let getProductDetails = (req,res)=>{
     })
 }
 
-//add
 let storeProdectDetails = (req,res)=>{
     let product = new ProductModel({
         name:req.body.name,
@@ -28,9 +27,8 @@ let storeProdectDetails = (req,res)=>{
     })
 }
 
-//delete
 let deleteProdectById = (req,res)=>{
-    let pid = req.params.pid;       //passing the id through path param
+    let pid = req.params.pid; 
     ProductModel.deleteOne({_id:pid},(err,result)=>{
         if(!err){
             if(result.deletedCount>0){
@@ -42,7 +40,6 @@ let deleteProdectById = (req,res)=>{
     })
 }
 
-//select
 let getProductById = (req,res)=>{
     let pid = req.params.pid;
     ProductModel.find({_id:pid},(err,result)=>{
@@ -53,7 +50,7 @@ let getProductById = (req,res)=>{
 }
 
 let updateProdectDetails = (req,res)=>{
-    let pid = req.body.pid;       //passing the id through path param
+    let pid = req.body.pid;       
     let upPrice = req.body.price;
     let newQuant = req.body.quantity;
     ProductModel.updateMany({_id:pid},{$set:{quantity:newQuant,price:upPrice,}},(err,result)=>{

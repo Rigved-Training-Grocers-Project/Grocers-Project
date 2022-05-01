@@ -18,15 +18,16 @@ let getProductPurchaseDetails = (req,res)=>{
         }
     });
 }
+
 let datePurchased = (req,res)=>{
     let date = req.params.date;
-
     PurchaseModel.find({ datePurchased: date},(err,result)=>{
         if(!err){
             res.json(result);
         }
     });
 }
+
 let twoDatesPurchaseed = (req,res)=>{
     let date = req.params.date;
     let date2 = req.params.date;

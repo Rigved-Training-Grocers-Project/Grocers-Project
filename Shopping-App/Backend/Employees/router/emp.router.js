@@ -8,4 +8,5 @@ router.post('/addEmployee', EmployeeController.empUserDetails);
 router.delete('/deleteEmpById/:pid', EmployeeController.deleteEmpById);
 router.put('/editEmployeeProfile', EmployeeController.editEmpPro);
 router.put('/changeEmployeePassword/:eid',EmployeeController.changeEmpPassword);
+
 module.exports = router;

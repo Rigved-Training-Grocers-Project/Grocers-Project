@@ -28,7 +28,6 @@ let empUserDetails = (req, res) => {
   });
 };
 
-//delete
 let deleteEmpById = (req, res) => {
   let pid = req.params.pid; //passing the id through path param
   EmployeeModel.deleteOne({ _id: pid }, (err, result) => {
@@ -68,7 +67,6 @@ let editEmpPro = (req, res) => {
     });
 }; 
 
-// change emp password
 let changeEmpPassword = (req,res) =>{
   let eid = req.params.eid;
   let newPass = req.body.newPass;
@@ -83,4 +81,5 @@ let changeEmpPassword = (req,res) =>{
     }
   });
 }
+
 module.exports = { empUserDetails, deleteEmpById, editEmpPro, getEmpByID,changeEmpPassword };
