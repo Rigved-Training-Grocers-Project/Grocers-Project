@@ -64,8 +64,6 @@ What Was Chellenging Part of Project?
 Actually Implementing Project as Concept wise and Logically was Chellenging.Even we were hardly facing
 Errors in the Logics of Functions and Some Componenets Like Funds and Employees and all.But Over all
 Project was Very Great.
- 
-Prathmesh--Employees
 
 
 
