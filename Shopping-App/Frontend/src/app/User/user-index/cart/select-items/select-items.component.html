@@ -1,0 +1,74 @@
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <b class="navbar-brand">ID: {{UserId}}</b>
+      </div>
+      <div class="navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+          </li>
+          <li><a routerLink="../edit-profile" class="nav-link"> Profile</a></li>
+
+          <li><a routerLink="../" class="nav-link"> Wallet</a></li>
+
+          <li><a routerLink="../order-status" class="nav-link"> Status</a></li>
+          <li class="nav-item">
+            <a routerLink="" class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br>
+    <div class="container main">
+      <div class="row">
+        <div class="col" style="border: 3px solid black; margin: 10px; border-radius: 30px;">
+          <div class="container-fluid">
+            <h1 style="text-align: center;">Groceries</h1>
+  
+            <div class="row">
+            
+  
+              <div *ngFor="let item of products; let i=index;" class="col-4"  >
+  
+                <table class="table" style="table-layout: fixed;">
+                  <tr  >
+                    <td> {{products[i].name}}</td>
+                    <td> ${{products[i].price}}</td>
+                    <td><img src="{{products[i].imageUrl}}"></td>
+  
+                  </tr>
+  
+                </table>
+                <div class="input-group">
+                  <input type="button" value="-" class="button-minus" data-field="quantity"
+                    (click)="decriment('inc'+i,'nums'+i)">
+                  <input type="number" step="1" max="" value="0" name="quantity" class="quantity-field" [id]="'nums' +i"
+                    (input)="maxobj('nums'+i,i)">
+                  <input type="button" value="+" class="button-plus" data-field="quantity" id="'inc'+i"
+                    (click)="increment('inc'+i,'nums'+i,i)">
+                </div>
+                <input type="button" value="Add to cart" (click)="addCart('nums'+i,i)">
+                <p [id]="'msg'+i" style="color: red;"></p>
+              </div>
+              
+  
+            </div>
+            <button routerLink='../view-item' class="btn btn-dark btn-lg" type="button" name="user">Go To Cart:
+              {{cartNum}}</button>
+  
+            <hr>
+  
+  
+  
+  
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #pageContent -->
+  </div>
+  
+
+
+

@@ -1,0 +1,31 @@
+
+#item {
+    position: absolute;
+    top:45%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -17%;
+    width: 30%;
+    height: 20%;
+    background-color: rgb(50, 123, 205);
+}
+h2 {
+    color:rgb(236, 101, 101);
+    margin-top:10%;
+}
+
+h1{
+    text-align: center;
+    color:rgb(154, 78, 21);
+    margin-top: 8px;
+    padding: 3px;
+  }
+  nav{
+    background-color: rgb(36, 102, 167);
+  }
+  
+  li{
+    color: white;
+  }
+  
+  

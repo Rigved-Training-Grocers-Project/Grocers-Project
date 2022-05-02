@@ -1,0 +1,15 @@
+
+ h1{
+    text-align: center;
+    color:rgb(49, 118, 202);
+    margin-top: 8px;
+    padding: 3px;
+}
+nav{
+    background-color: rgb(13, 108, 187);
+}
+
+li{
+    color: white;
+}
+
