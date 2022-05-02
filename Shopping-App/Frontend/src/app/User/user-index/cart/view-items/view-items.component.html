@@ -1,0 +1,55 @@
+<!-- NavBar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <b class="navbar-brand">User ID: {{userId}}</b>
+            </div>
+            <div  class="navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    </li>
+                    <li><a routerLink="../edit-profile" class="nav-link"> Profile</a></li>
+                    
+                            <li><a routerLink="../order-status" class="nav-link"> Status</a></li>
+                            <li><a routerLink="../" class="nav-link"> Wallet</a></li>
+                            <li><a routerLink="../" class="nav-link"> View List</a></li>
+                            <li></li>
+                    <li class="nav-item">
+                        <a routerLink="" class="nav-link" (click) = "logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav> 
+        <br>
+
+
+<div>
+  <button  class="btn btn-success" type="button" name="user" routerLink='../'>Back</button>
+  <button  routerLink="../../purchaseComplete" class="btn btn-success" type="button" name="user" (click)="Purchased()" style="position: relative;float:right;">Purchase: ${{total}}</button> 
+  <p id='err' style="color:red"></p>
+  <div *ngFor="let item of cartProducts; let i=index;">
+    <div [id]="'item'+i">
+      <!-- <img [src]="'/assets/images/'+ 'product'+cartProducts[i].imgId+'.png'" alt="" [id]="'img'+i">-->
+    <table class="table">
+      <tr><th>Product</th>
+      <th>Price</th>
+    <th>Quantity</th></tr> 
+    <tr>
+      <td>{{cartProducts[i].name}}</td>
+     <td> ${{cartProducts[i].price}}</td>
+      <div> Quantity:<span [id]="'Q'+i"> {{cartProducts[i].quantity}}</span></div></tr> </table> 
+      <div class="input-group" [id]="'updateinfo'+i" style="visibility:hidden">
+        Quantity:<input type="button" value="-" class="button-minus" data-field="quantity"
+          (click)="decriment('inc'+i,'nums'+i)">
+        <input type="number" step="1" max="" [value]="cartProducts[i].quantity" name="quantity" class="quantity-field"
+          [id]="'nums' +i" (input)="maxobj('nums'+i,i)">
+        <input type="button" value="+" class="button-plus" data-field="quantity" id="'inc'+i"
+          (click)="increment('inc'+i,'nums'+i,i)">
+        <input type="button" value="confirm" (click)=confirmUpdate(i)>
+      </div>
+      <span style="width: 50px; margin-right: 20px;"><input type="button" value="Update" (click)=showUpdate(i) class="btn btn-primary"> </span>
+      <span><input type="button" value="Delete" (click)=deleteCartItem(i) class="btn btn-secondary"></span>
+    </div>
+  </div>
+
+</div>
+<!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons--> 

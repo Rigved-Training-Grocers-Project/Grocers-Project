@@ -1,0 +1,64 @@
+<div style="
+    background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-supermarket-canned-snacks-at-noon-in-the-supermarket-picture-image_1486780.jpg');
+    height: auto;
+  "> 
+  <div class = "container">
+    
+    <div class = "wrapper">
+    <div id = "formContent">
+    <div class = "row">
+        <h3 >Update Profile</h3>
+    <div class = "row mb-3">
+        
+    <form #userERef = "ngForm" (ngSubmit) = "updateEmail(userERef.value)">
+        <label class = "col col-form-label">New Email</label>
+        <div class = "col">
+        <input type = "text" name = "newEmail" class = "form-control" ngModel><br/>
+        <input type = "submit" value = "Update" class = "btn btn-dark">
+        </div>
+    </form>
+    </div>
+    <div class = "row mb-3">
+    <form #userPassRef = "ngForm" (ngSubmit) = "updatePass(userPassRef.value)">
+        <label class = "col col-form-label">New Password</label>
+        <div class = "col">
+        <input type = "password" name = "newPass" class = "form-control" ngModel><br/>
+        <input type = "submit" value = "Update" class = "btn btn-dark">
+        </div>
+    </form>
+    </div>
+    <div class = "row">
+    <form #userARef = "ngForm" (ngSubmit) = "updateAddress(userARef.value)">
+        <label class = "col col-form-label">New Address</label>
+        <div class = "col">
+        <input type = "text" name = "newAdd" class = "form-control"  ngModel><br/>
+        <input type = "submit" value = "Update" class = "btn btn-dark">
+        </div>
+    </form>
+    </div>
+    </div>
+    <div class = "row">
+    <div class = "row">
+    <form #userPRef = "ngForm" (ngSubmit) = "updatePhone(userPRef.value)">
+        <label  class = "col col-form-label">New Phone Number</label>
+        <div class = "col">
+        <input type = "number" name = "newPhone" class = "form-control" ngModel><br/>
+        <input type = "submit" value = "Update" class = "btn btn-dark">
+        </div>
+    </form>
+    </div>
+    <div class = "row">
+    <form #userdobRef = "ngForm" (ngSubmit) = "updateDOB(userdobRef.value)">
+        <label  class = "col col-form-label">New Date of Birth</label>
+        <div class = "col">
+        <input type = "date" name = "newDOB" class = "form-control" ngModel><br/>
+        <input type = "submit" value = "Update" class = "btn btn-dark">
+        </div>
+    </form>
+    </div>
+    </div>
+    <div style="color: rgb(218, 62, 24);"><br>{{success}}</div>
+    </div>
+    <a routerLink=".." class="nav-link">Back</a><br />
+    </div> 
+  </div>
