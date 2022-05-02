@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+    color:rgb(41, 92, 168);
+    margin-top: 8px;
+    padding: 3px;
+}
+nav{
+    background-color: rgb(22, 95, 134);
+}
+a{
+    color: rgb(190, 108, 108);
+}
+.dropdown-item {
+    color: rgb(191, 59, 59);
+}
+.dropdown {
+    margin: 5px;
+}
+#dropdownMenuButton {
+    background-color: rgb(21, 102, 137);
+    border: none;
+}
+#table, table{
+    width:min-content;
+}
+
+.col {
+    max-width: fit-content;
+    border: 3px solid rgb(160, 25, 25); 
+    border-radius: 30px;
+    margin: auto;
+    margin-top: 50px;
+}

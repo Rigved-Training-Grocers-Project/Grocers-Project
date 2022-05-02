@@ -1,0 +1,54 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <b class="navbar-brand">Add Employee</b>
+    <div id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="nav-link btn btn-link" (click)="back()">Back</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h4 align="center">Add Employee</h4>
+
+
+
+      <form>
+        <div class="wrapper">
+          <div class="logo"> <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" alt=""> </div>
+          <div class="text-center mt-4 name"> Lotus Mart </div>
+
+          <form class="p-3 mt-3" #formRef='ngForm' (ngSubmit)='addEmp(formRef.value)' ngNativeValidate>
+            <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input type="text"
+                class="form-control" name="fname" placeholder="Firstname" required ngModel> </div>
+            <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input type="text"
+                class="form-control" name="lname" placeholder="lastname" required ngModel> </div>
+            <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input type="text"
+                class="form-control" name="email" placeholder="Email" required ngModel> </div>
+
+
+            <input type="submit" class="btn mt-3" type="submit" value="Add Employee">
+            <button type="reset" class="btn btn-light">Reset</button>
+          </form>
+          <a routerLink="" class="nav-link">Back</a><br>
+
+
+        </div>
+      </form>
+
+
+
+
+
+
+
+      <div style="color: green;">{{resultMsg}}</div>
+      <br>
+    </div>
+  </div>
+</div>

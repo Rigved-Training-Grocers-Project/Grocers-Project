@@ -1,0 +1,47 @@
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <b class="navbar-brand">Admin</b>
+        <div id="navbarNav">
+          <ul class="navbar-nav">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Product
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a routerLink="addProduct" class="dropdown-item">Add Product</a>
+                <a routerLink="updateProduct" class="dropdown-item">Update Product</a>
+                <a routerLink="deleteProduct" class="dropdown-item">Delete Product</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Employee
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a routerLink="addEmployee" class="dropdown-item">Add Employee</a>
+                <a routerLink="deleteEmployee" class="dropdown-item">Delete Employee</a>
+              </div>
+            </div>
+            
+            <li class="nav-item">
+              <a routerLink="report" class="nav-link">New Report</a>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link btn btn-link" (click)="logout()">Log Out</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Requests</h1>
+          <app-view-requests></app-view-requests>
+          <br>
+        </div>
+      </div>
+    </div>
+</div>

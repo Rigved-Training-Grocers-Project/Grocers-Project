@@ -1,0 +1,19 @@
+
+<section >
+    <div style="background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-supermarket-canned-snacks-at-noon-in-the-supermarket-picture-image_1486780.jpg');height: auto;">
+ <div class="wrapper">
+     <div class="logo"> <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+             alt=""> </div>
+     <div class="text-center mt-4 name"> Lotus Mart </div>
+     <form class="p-3 mt-3" #loginRef="ngForm" (ngSubmit)="checkUser(loginRef.value)" ngNativeValidate>
+         <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input type="text" name="username" placeholder="username" ngModel> </div>
+         <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" name="pass" placeholder="password" ngModel> </div>
+         <input type="submit" value="Sign In" class="btn mt-3" >
+
+     </form>
+    
+     <a routerLink="" class="nav-link">Back</a><br>
+     <span> {{msg}}</span>
+ </div>
+</div></section>
+ 
