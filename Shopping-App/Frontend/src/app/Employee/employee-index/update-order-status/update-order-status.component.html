@@ -1,0 +1,39 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h3>Update Order Status</h3>
+    <form #updateRef="ngForm" (ngSubmit)="updateOrder(updateRef.value)">
+      <input type="text" name="oid" placeholder="Order ID" ngModel /><br />
+      <select name="orderStatus" id="Status" ngModel>
+        <optgroup optgroup label="order status">
+          <option disabled selected value>-- select an option --</option>
+          <option value="Shipped">Shipped</option>
+          <option value="Delivered">Delivered</option>
+          <option value="Cancelled">Cancelled</option>
+          <option value="Pending">Pending</option>
+        </optgroup>
+      </select>
+      <br />
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Clear" />
+    </form>
+
+    <a routerLink=".." class="nav-link">Back</a><br />
+    {{ msg }}
+  </div>
+</div>
+
+<div>
+  <table class="table table-dark" style="table-layout: fixed;">
+    <tr>
+      <th>OrderID</th>
+      <th>Product </th>
+      <th>Status</th>
+    </tr> 
+       <tr *ngFor="let item of orders; let i=index;">
+        <td>{{orders[i]._id}}</td> 
+         <td>{{orders[i].name}}</td> 
+         <td>{{orders[i].orderStatus}}</td>
+    </tr>
+    
+  </table>
+</div>

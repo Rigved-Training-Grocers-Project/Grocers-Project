@@ -1,0 +1,25 @@
+
+  
+<section >
+    <div style="background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-supermarket-canned-snacks-at-noon-in-the-supermarket-picture-image_1486780.jpg');height: auto;">
+ <div class="wrapper">
+     <div class="logo"> <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+             alt=""> </div>
+     <div class="text-center mt-4 name"> Lotus Mart </div>
+     <form class="p-3 mt-3" form #empRef = "ngForm" (ngSubmit) = "employeeLogin(empRef.value)">
+         <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input type="number" name="empID" placeholder="Employee Id" ngModel id="in1"> </div>
+         <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" name="empPass" placeholder="password" ngModel> </div>
+         <input type="submit" value="Sign In" class="btn mt-3" >
+
+     </form>
+     <div *ngIf = "showChangePass" id = "changePassForm" ngNativeValidate>
+        Change Password From Default
+        <form #empPRef = "ngForm" (ngSubmit) = "changeEmployeePassword(empPRef.value)">
+        <input type = "number" name = "id" placeholder = "Re-Enter ID" required ngModel>
+        <input type = "password" name = "newPass" placeholder = "New Password" required ngModel>
+        <input type = "submit" value = "Change Password">
+        </form>
+    </div>
+ </div>
+</div></section>
+ 
